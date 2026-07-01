@@ -25,6 +25,8 @@ function milesightDeviceDecode(bytes) {
     var server = new IpsoProtocolServer();
     server.setResource([common, device]);
     var decoded = server.read(bytes);
+    decoded.devEUI = LoRaObject.devEUI;
+    decoded.devName = LoRaObject.deviceName;
     // decoded.sensor = LoRaObject.devEUI;
     // decoded.raw = bytes;
     return decoded;

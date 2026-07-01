@@ -42,6 +42,8 @@ function milesightDeviceDecode(bytes) {
     var history = [];
 
     var decoded = {};
+    decoded.devEUI = LoRaObject.devEUI;
+    decoded.devName = LoRaObject.deviceName;
     var repack_flag = false;
     var buffer = new Buffer(bytes);
     while (buffer.remaining() > 0) {

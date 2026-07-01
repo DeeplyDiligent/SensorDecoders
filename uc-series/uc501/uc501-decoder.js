@@ -32,6 +32,8 @@ var adc_alarm_chns = [0x85, 0x86];
 
 function milesightDeviceDecode(bytes) {
     var decoded = {};
+    decoded.devEUI = LoRaObject.devEUI;
+    decoded.devName = LoRaObject.deviceName;
 
     for (var i = 0; i < bytes.length; ) {
         var channel_id = bytes[i++];
