@@ -35,6 +35,8 @@ var child_period_chns = [0x13, 0x16, 0x19, 0x1c];
 
 function milesightDeviceDecode(bytes) {
     var decoded = {};
+    decoded.devEUI = LoRaObject.devEUI;
+    decoded.devName = LoRaObject.deviceName;
 
     for (var i = 0; i < bytes.length; ) {
         var channel_id = bytes[i++];

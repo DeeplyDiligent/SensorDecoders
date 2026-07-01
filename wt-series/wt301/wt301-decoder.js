@@ -28,6 +28,8 @@ function Decoder(bytes, port) {
 
 function milesightDeviceDecode(bytes) {
     var decoded = {};
+    decoded.devEUI = LoRaObject.devEUI;
+    decoded.devName = LoRaObject.deviceName;
     var i = 0;
     decoded.head = bytes[i];
     decoded.command = readCommand(bytes[i + 1]);
